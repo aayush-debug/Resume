@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aayush Patel - Computer Engineering Student</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="scrollToSection('home')">Aayush Patel</div>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="scrollToSection('home'); return false;">Home</a></li>
+                <li><a href="#" onclick="scrollToSection('about'); return false;">About</a></li>
+                <li><a href="#" onclick="scrollToSection('projects'); return false;">Projects</a></li>
+                <li><a href="#" onclick="scrollToSection('testimonials'); return false;">Testimonials</a></li>
+                <li><a href="#" onclick="scrollToSection('contact'); return false;">Contact</a></li>
+                <li><button class="resume-btn" onclick="downloadResume()">Resume</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+        <div class="home-content">
+            <h1 class="main-title">Aayush Patel</h1>
+            <p class="location"><i class="fas fa-map-pin"></i> Mumbai, India</p>
+            <p class="subtitle">Computer Engineering Student | Tech Enthusiast | Aspiring Entrepreneur</p>
+            <p class="intro-text">Passionate about building solutions that matter through technology, code, and innovation.</p>
+            <div class="home-buttons">
+                <button class="cta-button" onclick="scrollToSection('about')">Explore More</button>
+                <button class="secondary-btn" onclick="downloadResume()">Download Resume</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p class="about-intro">
+                    I'm a computer engineering freshman at the University of Mumbai, driven by a passion for technology, coding, and entrepreneurship. With a keen interest in business analytics and finance, I aim to bridge the gap between technology and entrepreneurial innovation.
+                </p>
+                
+                <div class="about-details">
+                    <h3>Who I Am</h3>
+                    <p>
+                        A curious learner and problem-solver who believes in the power of technology to create meaningful change. I'm passionate about exploring new ideas, understanding business models, and developing solutions that solve real-world problems. My interests span across software development, entrepreneurship, financial analytics, and emerging technologies.
+                    </p>
+
+                    <h3>Education</h3>
+                    <ul class="education-list">
+                        <li>
+                            <strong>BTech in Computer Engineering</strong>
+                            <span class="duration">2025 - 2029</span>
+                            <p>University of Mumbai, India</p>
+                        </li>
+                        <li>
+                            <strong>12th Grade (HSC)</strong>
+                            <span class="duration">2023 - 2025</span>
+                            <p>PACE Junior Science College, Thane Region</p>
+                        </li>
+                        <li>
+                            <strong>10th Grade (SSC)</strong>
+                            <span class="duration">Until 2023</span>
+                            <p>New Horizon Group of Schools, Airoli, Navi Mumbai</p>
+                        </li>
+                    </ul>
+
+                    <h3>Interests & Goals</h3>
+                    <p>
+                        I'm particularly interested in financial analytics, business intelligence, and how technology can drive entrepreneurial ventures. I'm always eager to learn, collaborate, and contribute to projects that have a meaningful impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card placeholder">
+                    <h3>Coming Soon</h3>
+                    <p>More projects coming up! I'm currently working on exciting projects that I'll share here soon.</p>
+                </div>
+            </div>
+            <p class="projects-note">Projects will be added as I continue my journey. Stay tuned!</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <p class="section-subtitle">What others say about me</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card placeholder">
+                    <p class="testimonial-text">"Testimonials coming soon as I collaborate with amazing people!"</p>
+                    <p class="testimonial-author">- Your future collaborators</p>
+                </div>
+            </div>
+            <p class="testimonials-note">I'm eager to build relationships and receive feedback from mentors, peers, and collaborators.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="contact-intro">I'd love to hear from you! Feel free to reach out through any of these channels.</p>
+            <div class="contact-content">
+                <a href="tel:+918104959628" class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+91 8104959628</p>
+                </a>
+                <a href="mailto:agpatel01122007@gmail.com" class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>agpatel01122007@gmail.com</p>
+                </a>
+                <a href="https://www.linkedin.com/in/aayush-patel-5ba509291" target="_blank" class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>Visit My Profile</p>
+                </a>
+                <a href="https://github.com/aayush-debug" target="_blank" class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>View My Projects</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Aayush Patel. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
