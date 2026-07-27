@@ -1,134 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aayush Patel - Computer Engineering Student</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Aayush Patel - Computer Engineering Student, Tech Innovator & Aspiring Entrepreneur based in Mumbai, India. Portfolio featuring projects, education, and contact details.">
+    <title>Aayush Patel | Tech & Engineering Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Background Ambient Glow Orbs -->
+    <div class="ambient-glow orb-1"></div>
+    <div class="ambient-glow orb-2"></div>
+    <div class="ambient-glow orb-3"></div>
+
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo" onclick="scrollToSection('home')">Aayush Patel</div>
-            <ul class="nav-menu">
-                <li><a href="#" onclick="scrollToSection('home'); return false;">Home</a></li>
-                <li><a href="#" onclick="scrollToSection('about'); return false;">About</a></li>
-                <li><a href="#" onclick="scrollToSection('projects'); return false;">Projects</a></li>
-                <li><a href="#" onclick="scrollToSection('contact'); return false;">Contact</a></li>
-                <li><button class="resume-btn" onclick="downloadResume()">Resume</button></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Home Section -->
-    <section id="home" class="section home-section">
-        <div class="home-content">
-            <h1 class="main-title">Aayush Patel</h1>
-            <p class="location"><i class="fas fa-map-pin"></i> Mumbai, India</p>
-            <p class="subtitle">Computer Engineering Student | Tech Enthusiast | Aspiring Entrepreneur</p>
-            <p class="intro-text">Passionate about building solutions that matter through technology, code, and
-                innovation.</p>
-            <div class="home-buttons">
-                <button class="cta-button" onclick="scrollToSection('about')">Explore More</button>
-                <button class="secondary-btn" onclick="downloadResume()">Download Resume</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p class="about-intro">
-                    I'm a computer engineering freshman at the University of Mumbai, driven by a passion for technology,
-                    coding, and entrepreneurship. With a keen interest in business analytics and finance, I aim to
-                    bridge the gap between technology and entrepreneurial innovation. I'm particularly interested in
-                    financial analytics, business intelligence, and how technology can drive entrepreneurial ventures.
-                    I'm always eager to learn, collaborate, and contribute to projects that have a meaningful impact.
-                </p>
-
-                <div class="about-details">
-                    <h3>Education</h3>
-                    <ul class="education-list">
-                        <li>
-                            <strong>BTech in Computer Engineering</strong>
-                            <span class="duration">2025 - 2029</span>
-                            <p>University of Mumbai, India</p>
-                        </li>
-                        <li>
-                            <strong>12th Grade (HSC)</strong>
-                            <span class="duration">2023 - 2025</span>
-                            <p>PACE Junior Science College, Thane Region</p>
-                        </li>
-                        <li>
-                            <strong>10th Grade (SSC)</strong>
-                            <span class="duration">Until 2023</span>
-                            <p>New Horizon Group of Schools, Airoli, Navi Mumbai</p>
-                        </li>
-                    </ul>
+    <header class="navbar-wrapper">
+        <nav class="navbar glass-card">
+            <div class="nav-container">
+                <a href="#home" class="logo" onclick="scrollToSection('home'); return false;">
+                    <span class="logo-accent">&lt;/&gt;</span> Aayush Patel
+                </a>
+                
+                <div class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card placeholder">
-                    <h3>Coming Soon</h3>
-                    <p>More projects coming up! I'm currently working on exciting projects that I'll share here soon.
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link active" onclick="scrollToSection('home'); return false;">Home</a></li>
+                    <li><a href="#about" class="nav-link" onclick="scrollToSection('about'); return false;">About</a></li>
+                    <li><a href="#projects" class="nav-link" onclick="scrollToSection('projects'); return false;">Projects</a></li>
+                    <li><a href="#contact" class="nav-link" onclick="scrollToSection('contact'); return false;">Contact</a></li>
+                </ul>
+
+                <button class="resume-btn glow-effect" onclick="downloadResume()">
+                    <span>Resume</span>
+                    <i class="fas fa-download"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main>
+        <!-- Home / Hero Section -->
+        <section id="home" class="section home-section">
+            <div class="container">
+                <div class="home-content glass-card spotlight-card">
+                    <div class="status-pill">
+                        <span class="pulse-dot"></span>
+                        <span>BTech Computer Engineering &bull; Mumbai, India</span>
+                    </div>
+
+                    <h1 class="main-title">
+                        Building Solutions That <span class="shimmer-text">Matter</span>
+                    </h1>
+
+                    <p class="subtitle">
+                        Computer Engineering Student <span class="divider-dot">&bull;</span> Tech Innovator <span class="divider-dot">&bull;</span> Aspiring Entrepreneur
                     </p>
+
+                    <p class="intro-text">
+                        Passionate about bridging technology with business intelligence and financial analytics to solve complex real-world problems.
+                    </p>
+
+                    <!-- Tech Stack Pills -->
+                    <div class="tech-pills">
+                        <span class="pill"><i class="fab fa-python"></i> Python</span>
+                        <span class="pill"><i class="fas fa-code"></i> C++ / C</span>
+                        <span class="pill"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="pill"><i class="fas fa-chart-line"></i> Business Analytics</span>
+                        <span class="pill"><i class="fas fa-coins"></i> FinTech</span>
+                    </div>
+
+                    <div class="home-buttons">
+                        <button class="cta-button primary-btn glow-effect" onclick="scrollToSection('projects')">
+                            <span>Explore Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="secondary-btn glow-effect" onclick="downloadResume()">
+                            <span>Download Resume</span>
+                            <i class="fas fa-file-pdf"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-            <p class="projects-note">Projects will be added as I continue my journey. Stay tuned!</p>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="contact-intro">I'd love to hear from you! Feel free to reach out through any of these channels.
-            </p>
-            <div class="contact-content">
-                <a href="mailto:agpatel01122007@gmail.com" class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">BACKGROUND & VISION</span>
+                    <h2 class="section-title">About <span class="shimmer-text">Me</span></h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Bio Card -->
+                    <div class="about-bio glass-card spotlight-card">
+                        <div class="card-icon"><i class="fas fa-user-astronaut"></i></div>
+                        <h3>Who I Am</h3>
+                        <p>
+                            I am a Computer Engineering freshman at the <strong>University of Mumbai</strong>, driven by a deep curiosity for high-impact technology, scalable software systems, and entrepreneurial strategy.
+                        </p>
+                        <p>
+                            With a targeted focus on <strong>business analytics, quantitative finance, and business intelligence</strong>, I aim to create technology solutions that seamlessly power data-driven decisions and modern enterprises.
+                        </p>
+                        
+                        <div class="highlights-grid">
+                            <div class="highlight-item">
+                                <i class="fas fa-brain"></i>
+                                <div>
+                                    <h4>Problem Solver</h4>
+                                    <p>Algorithms & System Thinking</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-chart-pie"></i>
+                                <div>
+                                    <h4>Analytics Mindset</h4>
+                                    <p>Financial Intelligence & Data</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Email</h3>
-                    <p>agpatel01122007@gmail.com</p>
-                </a>
-                <a href="https://www.linkedin.com/in/aayush-patel-5ba509291" target="_blank" class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
+
+                    <!-- Education Timeline -->
+                    <div class="about-education glass-card spotlight-card">
+                        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>Education Journey</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-year">2025 &mdash; 2029</span>
+                                    <h4>BTech in Computer Engineering</h4>
+                                    <p class="institution"><i class="fas fa-university"></i> University of Mumbai, India</p>
+                                    <p class="timeline-desc">Focusing on core computer science, software engineering principles, algorithms, and computational data analysis.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-year">2023 &mdash; 2025</span>
+                                    <h4>12th Grade (HSC) &bull; Science</h4>
+                                    <p class="institution"><i class="fas fa-school"></i> PACE Junior Science College, Thane Region</p>
+                                    <p class="timeline-desc">Specialized in Advanced Physics, Chemistry, and Mathematics foundations.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-year">Completed 2023</span>
+                                    <h4>10th Grade (SSC)</h4>
+                                    <p class="institution"><i class="fas fa-award"></i> New Horizon Group of Schools, Airoli, Navi Mumbai</p>
+                                    <p class="timeline-desc">Graduated with top academic standing and active participation in science competitions.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>LinkedIn</h3>
-                    <p>Visit My Profile</p>
-                </a>
-                <a href="https://github.com/aayush-debug" target="_blank" class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>View My Projects</p>
-                </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">INNOVATION & CODE</span>
+                    <h2 class="section-title">Featured <span class="shimmer-text">Projects</span></h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project Card 1: Orbital Torus Knots -->
+                    <div class="project-card glass-card spotlight-card">
+                        <div class="project-header">
+                            <span class="project-tag tag-accent">3D &amp; GEOMETRY</span>
+                            <div class="project-links">
+                                <a href="https://github.com/aayush-debug/Orbital-Torus-knots" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Orbital Torus Knots</h3>
+                        <p class="project-description">
+                            A multi-ringed geometric system interpolating between a flat wave field and a spherical interlocking planetary orbital structure.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>JavaScript</span>
+                            <span>Canvas / Geometry</span>
+                            <span>Mathematics</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: BottleBuzz -->
+                    <div class="project-card glass-card spotlight-card">
+                        <div class="project-header">
+                            <span class="project-tag tag-primary">TYPESCRIPT APP</span>
+                            <div class="project-links">
+                                <a href="https://github.com/aayush-debug/BottleBuzz" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">BottleBuzz</h3>
+                        <p class="project-description">
+                            A web application built with TypeScript, delivering an engaging user interface and dynamic experience.
+                        </p>
+                        <div class="project-tech">
+                            <span>TypeScript</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>Web App</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Monte Carlo Wealth Simulator -->
+                    <div class="project-card glass-card spotlight-card">
+                        <div class="project-header">
+                            <span class="project-tag tag-muted">QUANT &amp; FINANCE</span>
+                            <div class="project-links">
+                                <a href="https://github.com/aayush-debug/Monte-Carlo-Wealth-Simulator" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Monte Carlo Wealth Simulator</h3>
+                        <p class="project-description">
+                            A mathematical wealth forecasting tool utilizing Monte Carlo simulations to model probability distributions of financial market outcomes over time.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Monte Carlo</span>
+                            <span>Financial Modeling</span>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4: Expense Tracker -->
+                    <div class="project-card glass-card spotlight-card">
+                        <div class="project-header">
+                            <span class="project-tag tag-primary">FINTECH</span>
+                            <div class="project-links">
+                                <a href="https://github.com/aayush-debug/expense-tracker" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Expense Tracker</h3>
+                        <p class="project-description">
+                            A personal finance application created for tracking daily expenses, categorizing spending, and managing personal budgets.
+                        </p>
+                        <div class="project-tech">
+                            <span>TypeScript</span>
+                            <span>Finance UI</span>
+                            <span>Web App</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5: Weather Tracker -->
+                    <div class="project-card glass-card spotlight-card">
+                        <div class="project-header">
+                            <span class="project-tag tag-accent">WEB APP</span>
+                            <div class="project-links">
+                                <a href="https://github.com/aayush-debug/weather-tracker" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Weather Tracker</h3>
+                        <p class="project-description">
+                            Real-time weather application fetching current weather metrics, forecasts, and location insights.
+                        </p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>Weather API</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6: Personal Portfolio Website -->
+                    <div class="project-card glass-card spotlight-card">
+                        <div class="project-header">
+                            <span class="project-tag tag-primary">PORTFOLIO</span>
+                            <div class="project-links">
+                                <a href="https://github.com/aayush-debug/Resume" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Interactive Resume Portfolio</h3>
+                        <p class="project-description">
+                            Personal developer portfolio website featuring custom glassmorphism design, mouse spotlighting, and responsive styling.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>Vanilla CSS3</span>
+                            <span>ES6 JS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">CONNECT</span>
+                    <h2 class="section-title">Get In <span class="shimmer-text">Touch</span></h2>
+                    <p class="contact-intro">Let's build something impactful together. Reach out via email or connect on social platforms.</p>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Email Card -->
+                    <a href="mailto:agpatel01122007@gmail.com" class="contact-card glass-card spotlight-card">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Direct</h3>
+                        <p>agpatel01122007@gmail.com</p>
+                        <span class="card-action">Send Message <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <!-- LinkedIn Card -->
+                    <a href="https://www.linkedin.com/in/aayush-patel-5ba509291" target="_blank" rel="noopener noreferrer" class="contact-card glass-card spotlight-card">
+                        <div class="contact-icon-wrapper linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Connect professionally</p>
+                        <span class="card-action">View Profile <i class="fas fa-external-link-alt"></i></span>
+                    </a>
+
+                    <!-- GitHub Card -->
+                    <a href="https://github.com/aayush-debug" target="_blank" rel="noopener noreferrer" class="contact-card glass-card spotlight-card">
+                        <div class="contact-icon-wrapper github">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Explore code & repositories</p>
+                        <span class="card-action">Visit GitHub <i class="fas fa-external-link-alt"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Aayush Patel. All rights reserved.</p>
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 <strong>Aayush Patel</strong>. Engineered with precision &amp; passion.</p>
+            <div class="footer-links">
+                <a href="#home" onclick="scrollToSection('home'); return false;">Back to top <i class="fas fa-arrow-up"></i></a>
+            </div>
+        </div>
     </footer>
 
+    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 
