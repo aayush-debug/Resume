@@ -1302,10 +1302,9 @@ body {
     }
 
     .nav-actions {
-        width: 100%;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        gap: 0.75rem;
+        display: flex;
+        gap: 0.5rem;
+        order: -1;
     }
 
     .mobile-toggle {
@@ -1359,9 +1358,14 @@ body {
         flex-direction: column;
     }
 
-    .home-buttons button,
-    .resume-btn {
+    .home-buttons button {
         width: 100%;
+    }
+
+    .resume-btn {
+        width: auto;
+        padding: 0.45rem 0.9rem;
+        font-size: 0.8rem;
     }
 
     .tech-pills {
