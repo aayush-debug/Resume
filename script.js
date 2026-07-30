@@ -1,8 +1,9 @@
 // ==========================================================================
-// $10M LUXURY TECH PORTFOLIO - INTERACTIVE SCRIPT
+// PORTFOLIO & RESUME INTERACTIVE SCRIPT
+// Features: Theme Switcher (Dark/Light), Smooth Scroll, Spotlight FX, Form Handler
 // ==========================================================================
 
-// Smooth scroll to target section with offset
+// Smooth scroll to target section with header offset
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -17,8 +18,10 @@ function scrollToSection(sectionId) {
 
         // Close mobile nav menu if open
         const navMenu = document.getElementById('nav-menu');
+        const mobileToggleIcon = document.querySelector('#mobile-toggle i');
         if (navMenu && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
+            if (mobileToggleIcon) mobileToggleIcon.className = 'fas fa-bars';
         }
     }
 }
@@ -33,8 +36,63 @@ function downloadResume() {
     document.body.removeChild(link);
 }
 
+// Client-side Contact Form Handler
+function handleFormSubmit(event) {
+    event.preventDefault();
+    const form = document.getElementById('contact-form');
+    const statusMsg = document.getElementById('form-status');
+
+    if (!form || !statusMsg) return;
+
+    // Show simulated success status
+    statusMsg.className = 'form-status-msg success';
+    statusMsg.style.display = 'block';
+    statusMsg.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. I will get back to you shortly.';
+
+    // Reset form fields
+    form.reset();
+
+    // Auto hide success message after 5 seconds
+    setTimeout(() => {
+        statusMsg.style.display = 'none';
+    }, 5000);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    // --- 1. Mouse Spotlight Card Effect ---
+    // --- 1. DARK / LIGHT THEME TOGGLE SYSTEM ---
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const htmlElement = document.documentElement;
+
+    // Initialize Theme from localStorage or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+    if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
+        htmlElement.setAttribute('data-theme', 'light');
+        if (themeIcon) themeIcon.className = 'fas fa-sun';
+    } else {
+        htmlElement.setAttribute('data-theme', 'dark');
+        if (themeIcon) themeIcon.className = 'fas fa-moon';
+    }
+
+    // Toggle Theme Click Event
+    if (themeToggleBtn && themeIcon) {
+        themeToggleBtn.addEventListener('click', function() {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                htmlElement.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                htmlElement.setAttribute('data-theme', 'light');
+                themeIcon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+
+    // --- 2. MOUSE SPOTLIGHT CARD EFFECT ---
     const spotlightCards = document.querySelectorAll('.spotlight-card');
     spotlightCards.forEach(card => {
         card.addEventListener('mousemove', e => {
@@ -46,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- 2. Mobile Menu Toggle ---
+    // --- 3. MOBILE NAVIGATION TOGGLE ---
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
 
@@ -64,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Close mobile menu on clicking outside
+        // Close mobile menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
                 navMenu.classList.remove('active');
@@ -74,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 3. Scroll Header Hide / Reveal ---
+    // --- 4. SCROLL HEADER HIDE / REVEAL ---
     let lastScrollTop = 0;
     const navbarWrapper = document.querySelector('.navbar-wrapper');
 
@@ -84,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (scrollTop > lastScrollTop && scrollTop > 150) {
             // Scroll Down - hide header
-            if (navbarWrapper) navbarWrapper.style.transform = 'translateY(-120%)';
+            if (navbarWrapper) navbarWrapper.style.transform = 'translateY(-130%)';
         } else {
             // Scroll Up or top - reveal header
             if (navbarWrapper) navbarWrapper.style.transform = 'translateY(0)';
@@ -93,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     }, { passive: true });
 
-    // --- 4. Active Nav Item Intersection Observer ---
+    // --- 5. ACTIVE NAV LINK INTERSECTION OBSERVER ---
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -119,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sections.forEach(section => sectionObserver.observe(section));
 
-    // --- 5. Reveal Animations on Scroll ---
+    // --- 6. REVEAL ANIMATIONS ON SCROLL ---
     const revealElements = document.querySelectorAll('.spotlight-card, .section-header');
     
     const revealObserver = new IntersectionObserver((entries) => {
@@ -130,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
 
     revealElements.forEach(el => {
         el.style.opacity = '0';
