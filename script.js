@@ -59,40 +59,7 @@ function handleFormSubmit(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // --- 1. DARK / LIGHT THEME TOGGLE SYSTEM ---
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const htmlElement = document.documentElement;
-
-    // Initialize Theme from localStorage or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-
-    if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
-        htmlElement.setAttribute('data-theme', 'light');
-        if (themeIcon) themeIcon.className = 'fas fa-sun';
-    } else {
-        htmlElement.setAttribute('data-theme', 'dark');
-        if (themeIcon) themeIcon.className = 'fas fa-moon';
-    }
-
-    // Toggle Theme Click Event
-    if (themeToggleBtn && themeIcon) {
-        themeToggleBtn.addEventListener('click', function() {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            if (currentTheme === 'light') {
-                htmlElement.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fas fa-moon';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                htmlElement.setAttribute('data-theme', 'light');
-                themeIcon.className = 'fas fa-sun';
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    }
-
-    // --- 2. MOUSE SPOTLIGHT CARD EFFECT ---
+    // --- 1. MOUSE SPOTLIGHT CARD EFFECT ---
     const spotlightCards = document.querySelectorAll('.spotlight-card');
     spotlightCards.forEach(card => {
         card.addEventListener('mousemove', e => {
@@ -104,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- 3. MOBILE NAVIGATION TOGGLE ---
+    // --- 2. MOBILE NAVIGATION TOGGLE ---
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
 
@@ -132,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 4. SCROLL HEADER HIDE / REVEAL ---
+    // --- 3. SCROLL HEADER HIDE / REVEAL ---
     let lastScrollTop = 0;
     const navbarWrapper = document.querySelector('.navbar-wrapper');
 
@@ -151,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     }, { passive: true });
 
-    // --- 5. ACTIVE NAV LINK INTERSECTION OBSERVER ---
+    // --- 4. ACTIVE NAV LINK INTERSECTION OBSERVER ---
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -177,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sections.forEach(section => sectionObserver.observe(section));
 
-    // --- 6. REVEAL ANIMATIONS ON SCROLL ---
+    // --- 5. REVEAL ANIMATIONS ON SCROLL ---
     const revealElements = document.querySelectorAll('.spotlight-card, .section-header');
     
     const revealObserver = new IntersectionObserver((entries) => {
