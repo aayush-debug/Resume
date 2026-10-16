@@ -1,192 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Aayush Patel - Resume</title>
-<style>
-  @page {
-    size: A4 portrait;
-    margin: 18mm 18mm 18mm 18mm;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #111;
-    background: #fff;
-    line-height: 1.42;
-    font-size: 10.5pt;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  .header {
-    margin-bottom: 16px;
-  }
-  h1 {
-    font-size: 22pt;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #000;
-    margin-bottom: 4px;
-  }
-  .contact-line {
-    font-size: 9.5pt;
-    color: #222;
-  }
-  .contact-line a {
-    color: inherit;
-    text-decoration: none;
-  }
-  .section {
-    margin-bottom: 14px;
-  }
-  .section-title {
-    font-size: 10pt;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #000;
-    margin-bottom: 5px;
-  }
-  p {
-    margin-bottom: 5px;
-    font-size: 9.8pt;
-    color: #1a1a1a;
-  }
-  .project-block {
-    margin-bottom: 10px;
-  }
-  .project-title {
-    font-size: 10.2pt;
-    font-weight: 700;
-    color: #000;
-  }
-  .project-subtitle {
-    font-size: 9.5pt;
-    font-style: italic;
-    color: #333;
-    margin-bottom: 1px;
-  }
-  .project-tech {
-    font-size: 9.2pt;
-    color: #444;
-    margin-bottom: 3px;
-  }
-  .project-link {
-    font-size: 9.2pt;
-    color: #444;
-    margin-bottom: 3px;
-  }
-  .project-link a {
-    color: inherit;
-    text-decoration: none;
-  }
-  ul {
-    list-style-type: disc;
-    margin-left: 18px;
-    margin-top: 2px;
-    margin-bottom: 4px;
-  }
-  li {
-    font-size: 9.5pt;
-    color: #1a1a1a;
-    margin-bottom: 3px;
-    line-height: 1.38;
-  }
-  .skills-label {
-    font-size: 9.8pt;
-    font-weight: 600;
-    color: #111;
-    margin-bottom: 2px;
-  }
-  .skills-list {
-    font-size: 9.5pt;
-    color: #222;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aayush Patel — Software & ML Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FBFBF9;
+      --ink: #141413;
+      --ink-muted: #5E5D59;
+      --ink-faint: #9C9A92;
+      --rule: #E2E0D8;
+      --accent: #C84B31;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif: 'Instrument Serif', Georgia, serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111110;
+        --ink: #EDEDEC;
+        --ink-muted: #9B9A97;
+        --ink-faint: #605F5B;
+        --rule: #262624;
+        --accent: #E06D53;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 24px;
+    }
+
+    /* Structural Container */
+    .sheet {
+      max-width: 880px;
+      margin: 64px auto 96px;
+      border-top: 2px solid var(--ink);
+    }
+
+    /* Header / Masthead */
+    header {
+      padding: 36px 0 32px;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+    }
+
+    .name {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      color: var(--ink-muted);
+      font-size: 15px;
+      max-width: 46ch;
+    }
+
+    .meta-links {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-color: var(--rule);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.15s ease, color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
+    /* Asymmetric Section Grid */
+    .section {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--rule);
+      gap: 24px;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-muted);
+      padding-top: 4px;
+    }
+
+    .section-label span {
+      display: block;
+      color: var(--ink-faint);
+      margin-bottom: 2px;
+    }
+
+    /* Entries */
+    .entry-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 6px;
+    }
+
+    .entry-title {
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .entry-meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-muted);
+      white-space: nowrap;
+    }
+
+    .entry-stack {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .entry-body {
+      color: var(--ink-muted);
+      font-size: 14.5px;
+    }
+
+    .entry-body ul {
+      list-style: none;
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .entry-body li {
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .entry-body li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--ink-faint);
+    }
+
+    /* Technical Index Table */
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .spec-table tr {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .spec-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .spec-table th {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink-muted);
+      text-align: left;
+      padding: 10px 16px 10px 0;
+      width: 160px;
+      vertical-align: top;
+    }
+
+    .spec-table td {
+      padding: 10px 0;
+      font-size: 14.5px;
+      color: var(--ink);
+    }
+
+    /* Footer */
+    footer {
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-faint);
+    }
+
+    /* Responsive Mobile Layout */
+    @media (max-width: 680px) {
+      .sheet {
+        margin: 32px auto 64px;
+      }
+      header {
+        grid-template-columns: 1fr;
+      }
+      .meta-links {
+        text-align: left;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .section {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .entry-header {
+        flex-direction: column;
+        gap: 2px;
+      }
+    }
+
+    /* Clean PDF Print Styles */
+    @page {
+      size: A4 portrait;
+      margin: 14mm 16mm;
+    }
+
+    @media print {
+      :root {
+        --bg: #FFFFFF;
+        --ink: #141413;
+        --ink-muted: #3D3C39;
+        --ink-faint: #6B6962;
+        --rule: #D5D3CA;
+        --accent: #B83B22;
+      }
+      body {
+        background: #FFFFFF !important;
+        color: #141413 !important;
+        padding: 0 !important;
+        font-size: 13.5px;
+        line-height: 1.5;
+      }
+      .sheet {
+        margin: 0 !important;
+        max-width: 100% !important;
+        border-top: 2px solid var(--ink) !important;
+      }
+      header {
+        padding: 14px 0 16px !important;
+      }
+      .section {
+        padding: 18px 0 !important;
+        gap: 20px !important;
+      }
+      .entry-list {
+        gap: 16px !important;
+      }
+      .spec-table th, .spec-table td {
+        padding: 7px 0 !important;
+      }
+      .section-break-print {
+        break-before: page;
+        page-break-before: always;
+      }
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+      .entry, .spec-table tr, .section-label, header, footer {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>Aayush Patel</h1>
-  <div class="contact-line">
-    Mumbai, Maharashtra &nbsp;|&nbsp; <a href="mailto:agpatel01122007@gmail.com">agpatel01122007@gmail.com</a> &nbsp;|&nbsp; <a href="tel:+918104959628">+91 8104959628</a> &nbsp;|&nbsp; <a href="https://github.com/aayush-debug" target="_blank">github.com/aayush-debug</a>
-  </div>
-</div>
+  <main class="sheet">
+    <!-- MASTHEAD -->
+    <header>
+      <div>
+        <h1 class="name">Aayush Patel</h1>
+        <p class="subtitle">
+          Computer Engineering undergraduate building geospatial ML pipelines, backend systems, and data-intensive web applications. Based in Mumbai.
+        </p>
+      </div>
+      <nav class="meta-links">
+        <a href="https://github.com/aayush-debug" target="_blank" rel="noopener">github.com/aayush-debug ↗</a>
+        <a href="https://leetcode.com/u/aayush71_12/" target="_blank" rel="noopener">leetcode/aayush71_12 ↗</a>
+        <a href="https://huggingface.co/aayush0112" target="_blank" rel="noopener">hf.co/aayush0112 ↗</a>
+        <a href="mailto:agpatel01122007@gmail.com">agpatel01122007@gmail.com</a>
+        <a href="resume.pdf" download="Aayush_Patel_Resume.pdf" class="no-print">resume.pdf ↓</a>
+      </nav>
+    </header>
 
-<div class="section">
-  <div class="section-title">SUMMARY</div>
-  <p>
-    Second-year Computer Engineering student (B.Tech, University of Mumbai, expected 2029) with a strong self-directed builder track record across full-stack, data, and AI-integrated projects. Comfortable moving fast from idea to working prototype, with growing interest in entrepreneurship and product building. Currently seeking internships and co-founder opportunities.
-  </p>
-</div>
+    <!-- 01 / SELECTED SYSTEMS & PROJECTS -->
+    <section class="section">
+      <div class="section-label">
+        <span>01</span>
+        Systems &amp; Work
+      </div>
+      <div class="entry-list">
 
-<div class="section">
-  <div class="section-title">EDUCATION</div>
-  <p>
-    <strong>B.Tech in Computer Engineering</strong> &mdash; Mumbai, Maharashtra &mdash; Second year
-  </p>
-</div>
+        <article class="entry">
+          <div class="entry-header">
+            <h2 class="entry-title">
+              <a href="https://github.com/aayush-debug/MarineTrace" target="_blank" rel="noopener">MarineTrace — Oil Spill Detection &amp; Vessel Attribution ↗</a>
+            </h2>
+            <span class="entry-meta">SIH 2026 · 2026</span>
+          </div>
+          <div class="entry-stack">Python · Sentinel-1 SAR · Deep Learning · AIS Data · Docker · Render</div>
+          <div class="entry-body">
+            <p>Automated maritime surveillance pipeline combining synthetic aperture radar (SAR) imagery with real-time vessel telemetry.</p>
+            <ul>
+              <li>Built a deep learning segmentation pipeline on Sentinel-1 SAR and electro-optical imagery to isolate marine oil slicks from look-alike ocean phenomena.</li>
+              <li>Integrated a physical drift engine with spatio-temporal AIS vessel tracking to backtrack spill trajectories and pinpoint candidate source vessels.</li>
+              <li>Containerized and deployed the full-stack inference backend and visualization frontend across distributed cloud services.</li>
+            </ul>
+          </div>
+        </article>
 
-<div class="section">
-  <div class="section-title">PROJECTS</div>
+        <article class="entry">
+          <div class="entry-header">
+            <h2 class="entry-title">Pitch-Perfect-Connect / Let's Pitch</h2>
+            <span class="entry-meta">Full-Stack Application · 2026</span>
+          </div>
+          <div class="entry-stack">TypeScript · React · Supabase · PostgreSQL · OAuth</div>
+          <div class="entry-body">
+            <p>Collaborative founder-investor pitch platform with real-time database synchronization and role-based access control.</p>
+            <ul>
+              <li>Architected relational schemas, row-level security (RLS) policies, and OAuth authentication flows using Supabase and PostgreSQL.</li>
+              <li>Designed low-latency pitch deck review workflows and structured feedback channels.</li>
+            </ul>
+          </div>
+        </article>
 
-  <div class="project-block">
-    <div class="project-title">MarineTrace</div>
-    <div class="project-subtitle">Satellite-Based Oil Spill Detection &amp; Vessel Attribution</div>
-    <div class="project-tech">React, TypeScript, Python, FastAPI, U-Net, ResNet-34, AIS, Docker</div>
-    <ul>
-      <li>Built an end-to-end SAR satellite oil-spill detection and vessel-attribution pipeline using Sentinel-1 imagery, ML segmentation, AIS data, and geospatial analysis.</li>
-      <li>Developed a U-Net + ResNet-34 model for slick segmentation and implemented vessel attribution using spatial, temporal, trajectory, and behavioral factors.</li>
-      <li>Created a React/TypeScript GIS frontend and FastAPI backend with drift analysis, vessel search, investigation, and detection APIs; containerized with Docker.</li>
-    </ul>
-  </div>
+        <article class="entry">
+          <div class="entry-header">
+            <h2 class="entry-title">WaterScope</h2>
+            <span class="entry-meta">Collaborative Project · 2026</span>
+          </div>
+          <div class="entry-stack">Environmental Monitoring · Geospatial Analytics · Web Stack</div>
+          <div class="entry-body">
+            <p>Collaborative engineering system focused on water quality telemetry, mapping, and anomaly reporting.</p>
+          </div>
+        </article>
 
-  <div class="project-block">
-    <div class="project-title">Monte Carlo Wealth Simulator</div>
-    <div class="project-link"><a href="https://github.com/aayush-debug/Monte-Carlo-Wealth-Simulator" target="_blank">github.com/aayush-debug/Monte-Carlo-Wealth-Simulator</a></div>
-    <ul>
-      <li>Built in Python (Streamlit, Geometric Brownian Motion) with KPI cards, dark-themed Matplotlib charts, and a summary statistics table.</li>
-    </ul>
-  </div>
+      </div>
+    </section>
 
-  <div class="project-block">
-    <div class="project-title">BottleBuzz</div>
-    <div class="project-link"><a href="https://github.com/aayush-debug/BottleBuzz" target="_blank">github.com/aayush-debug/BottleBuzz</a></div>
-    <ul>
-      <li>TypeScript project.</li>
-    </ul>
-  </div>
-</div>
+    <!-- 02 / TECHNICAL SPECIFICATION -->
+    <section class="section section-break-print">
+      <div class="section-label">
+        <span>02</span>
+        Specification
+      </div>
+      <div>
+        <table class="spec-table">
+          <tbody>
+            <tr>
+              <th>Languages</th>
+              <td>C, C++, Java, Python, SQL, JavaScript / TypeScript, HTML/CSS</td>
+            </tr>
+            <tr>
+              <th>ML &amp; Geospatial</th>
+              <td>SAR Image Segmentation, Geodata Analysis, RAG Pipelines, Hugging Face</td>
+            </tr>
+            <tr>
+              <th>Backend &amp; Infra</th>
+              <td>Supabase, PostgreSQL, JDBC, Docker, Git/GitHub Actions, Render</td>
+            </tr>
+            <tr>
+              <th>Core CS</th>
+              <td>Data Structures &amp; Algorithms, Object-Oriented Programming, Linear &amp; Circular Queues, Linked Lists</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-<div class="section">
-  <div class="section-title">CURRENTLY BUILDING</div>
+    <!-- 03 / EDUCATION & TRAINING -->
+    <section class="section">
+      <div class="section-label">
+        <span>03</span>
+        Education
+      </div>
+      <div class="entry-list">
 
-  <div class="project-block">
-    <div class="project-title">Pitch Connect <span style="font-weight: normal; font-size: 9.5pt; color: #444;">(formerly LetsPitch)</span></div>
-    <ul>
-      <li>Startup-investor matchmaking platform with curated deal flow, AI-generated startup summaries, and a founder credibility score; built on Next.js/Supabase/Razorpay.</li>
-    </ul>
-  </div>
+        <article class="entry">
+          <div class="entry-header">
+            <h2 class="entry-title">B.E. in Computer Engineering</h2>
+            <span class="entry-meta">2025 — 2029</span>
+          </div>
+          <div class="entry-body">
+            <p>Second Year (SY Comp) · Mumbai, Maharashtra</p>
+            <ul>
+              <li>Coursework: Data Structures, Object-Oriented Programming in Java, Computer Organization.</li>
+            </ul>
+          </div>
+        </article>
 
-  <div class="project-block" style="margin-bottom: 4px;">
-    <div class="project-title">JARVIS-style AI Voice Assistant</div>
-    <p style="margin-top: 2px;">
-      Browser-based assistant using the Web Speech API and Claude API with a sci-fi, character-consistent persona.
-    </p>
-  </div>
-</div>
+        <article class="entry">
+          <div class="entry-header">
+            <h2 class="entry-title">Additional Technical Training</h2>
+            <span class="entry-meta">2026</span>
+          </div>
+          <div class="entry-body">
+            <ul>
+              <li><strong>IIRS ISRO Distance Learning:</strong> AI and Machine Learning for Geodata Analysis (Applicant/Participant, Jul 2026).</li>
+              <li><strong>Automation &amp; Retrieval-Augmented Generation (RAG):</strong> Applied LLM workflow architecture.</li>
+            </ul>
+          </div>
+        </article>
 
-<div class="section">
-  <div class="section-title">SKILLS</div>
-  <div class="skills-label">Technical Skills</div>
-  <div class="skills-list">
-    Python, Java, C, FastAPI, Automation &amp; RAG, Vibe Coding, Software as a Service (SaaS)
-  </div>
-</div>
+      </div>
+    </section>
+
+    <footer>
+      <span>REV. OCT 2026</span>
+      <span>TYPESET IN INSTRUMENT SERIF, INTER &amp; JETBRAINS MONO</span>
+    </footer>
+  </main>
 
 </body>
 </html>
